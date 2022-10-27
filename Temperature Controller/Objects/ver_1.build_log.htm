@@ -1,0 +1,200 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.36.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: a b, c, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.36.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.36.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+C:\Users\kayeg\Documents\Main Folders\[2] Ain Shams\[6] Term 8 - Spring 2022\[5] Real-Time and Embedded Systems Design\[2] Projects\[Final] Project\version_1.1\ver_1.1_proj.uvprojx
+Project File Date:  06/05/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'TM4C123GH6PM'
+main.c(30): warning: no previous extern declaration for non-static variable 'sequence_number' [-Wmissing-variable-declarations]
+uint32_t sequence_number = 0; // Used for ADC confiquration
+         ^
+main.c(30): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t sequence_number = 0; // Used for ADC confiquration
+^
+main.c(31): warning: no previous extern declaration for non-static variable 'base_temp' [-Wmissing-variable-declarations]
+float base_temp = 25.0;                         // Used for
+      ^
+main.c(31): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float base_temp = 25.0;                         // Used for
+^
+main.c(100): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        GPIOPinWrite(GPIO_PORTE_BASE, pin, pin);
+        ~~~~~~~~~~~~                       ^~~
+main.c(100): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        GPIOPinWrite(GPIO_PORTE_BASE, pin, pin);
+        ~~~~~~~~~~~~                  ^~~
+main.c(106): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        GPIOPinWrite(GPIO_PORTE_BASE, pin, 0);
+        ~~~~~~~~~~~~                  ^~~
+main.c(184): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+                float decimal_part = digits - (double)(int) digits;     // x.y - x.0 = 0.y
+                      ~~~~~~~~~~~~   ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+main.c(186): warning: implicit conversion changes signedness: 'int' to 'char' [-Wsign-conversion]
+                digits_arr[1] = '0' + integer_part % 10;                                // Tens digit 
+                              ~ ~~~~^~~~~~~~~~~~~~~~~~~
+main.c(188): warning: implicit conversion changes signedness: 'int' to 'char' [-Wsign-conversion]
+                digits_arr[0] = '0' + integer_part % 10;                                // Ones digit
+                              ~ ~~~~^~~~~~~~~~~~~~~~~~~
+main.c(193): warning: implicit conversion changes signedness: 'int' to 'char' [-Wsign-conversion]
+                digits_arr[3] = '0' + (int) decimal_part % 10;                  // Tenths digit
+                              ~ ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+main.c(195): warning: implicit conversion changes signedness: 'int' to 'char' [-Wsign-conversion]
+                digits_arr[4] = '0' + (int) decimal_part % 10;                  // Hundredths digit
+                              ~ ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+main.c(230): warning: implicit conversion changes signedness: 'unsigned int' to 'int32_t' (aka 'int') [-Wsign-conversion]
+        return charac - '0';
+        ~~~~~~ ~~~~~~~^~~~~
+main.c(305): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                taskYIELD();    // Leave processor for other tasks
+                           ^
+main.c(243): warning: unused parameter 'parameter' [-Wunused-parameter]
+void controller_Task(void *parameter){
+                           ^
+main.c(243): warning: function 'controller_Task' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void controller_Task(void *parameter){
+                                     ^
+main.c(307): warning: extra ';' outside of a function [-Wextra-semi]
+};
+ ^
+main.c(371): warning: implicit conversion changes signedness: 'int32_t' (aka 'int') to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+                                input = UARTCharGetNonBlocking(UART0_BASE);                             // Get char from UART0 receiver FIFO
+                                      ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c(372): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'unsigned char' [-Wimplicit-int-conversion]
+                                UARTCharPut(UART0_BASE, input);                                                 // Display user input for UX
+                                ~~~~~~~~~~~             ^~~~~
+main.c(375): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int8_t' (aka 'signed char') [-Wimplicit-int-conversion]
+                                        digit_1 = is_numeric(input);                                            // update digit
+                                                ~ ^~~~~~~~~~~~~~~~~
+main.c(378): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int8_t' (aka 'signed char') [-Wimplicit-int-conversion]
+                                        digit_2 = is_numeric(input);
+                                                ~ ^~~~~~~~~~~~~~~~~
+main.c(381): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+                                        new_setpoint = digit_1 * 10 + digit_2;                          // calculate new_setpoint from digits
+                                                     ~ ~~~~~~~~~~~~~^~~~~~~~~
+main.c(383): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                        if(acceptable_range(new_setpoint)){                                     // New setpoint is within aceptable range
+                                           ~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~
+main.c(314): warning: unused parameter 'parameter' [-Wunused-parameter]
+void UART_Task(void *parameter){
+                     ^
+main.c(314): warning: function 'UART_Task' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void UART_Task(void *parameter){
+                               ^
+main.c(431): warning: unused parameter 'parameter' [-Wunused-parameter]
+void LCD_Task(void *parameter){
+                    ^
+main.c(431): warning: function 'LCD_Task' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void LCD_Task(void *parameter){
+                              ^
+main.c(493): warning: no newline at end of file [-Wnewline-eof]
+//////////
+          ^
+main.c(491): warning: extra ';' outside of a function [-Wextra-semi]
+};
+ ^
+main.c(34): warning: no previous extern declaration for non-static variable 'queue_UART' [-Wmissing-variable-declarations]
+QueueHandle_t queue_UART;
+              ^
+main.c(34): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+QueueHandle_t queue_UART;
+^
+main.c(35): warning: no previous extern declaration for non-static variable 'queue_LCD' [-Wmissing-variable-declarations]
+QueueHandle_t queue_LCD;
+              ^
+main.c(35): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+QueueHandle_t queue_LCD;
+^
+main.c(36): warning: no previous extern declaration for non-static variable 'putty_mutex' [-Wmissing-variable-declarations]
+SemaphoreHandle_t putty_mutex;
+                  ^
+main.c(36): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+SemaphoreHandle_t putty_mutex;
+^
+30 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=18864 RO-data=2228 RW-data=8 ZI-data=5008  
+".\Objects\ver_1.1_proj" - 0 Error(s), 30 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS-FreeRTOS.10.4.6.pack
+                ARM.CMSIS-FreeRTOS.10.4.6
+                Bundle of FreeRTOS for Cortex-M and Cortex-A
+   * Component: Config Variant: FreeRTOS Version: 10.4.6
+   * Component: Core Variant: Cortex-M Version: 10.4.6
+   * Component: Heap Variant: Heap_1 Version: 10.4.6
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil.TM4C_DFP.1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\RTOS
+  .\RTE\_TM4C123GH6PM
+  C:\Users\kayeg\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include
+  C:\Users\kayeg\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include
+  C:\Users\kayeg\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\GCC\ARM_CM4F
+  C:\Users\kayeg\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\kayeg\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM.FreeRTOS::RTOS:Config:FreeRTOS:10.4.6
+      Include file:  Config\ARMCM\FreeRTOSConfig.h
+
+   * Component: ARM.FreeRTOS::RTOS:Core:Cortex-M:10.4.6
+      Include file:  Source\include\FreeRTOS.h
+      Include file:  Source\include\queue.h
+      Source file:   Source\queue.c
+      Include file:  Source\include\semphr.h
+      Source file:   Source\list.c
+      Source file:   Source\portable\GCC\ARM_CM4F\port.c
+      Source file:   Source\tasks.c
+      Include file:  Source\include\task.h
+      Source file:   CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c
+
+   * Component: ARM.FreeRTOS::RTOS:Heap:Heap_1:10.4.6
+      Source file:   Source\portable\MemMang\heap_1.c
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: Keil::Device:Startup:1.0.1
+      Include file:  Device\Include\TM4C123\TM4C123.h
+      Source file:   Device\Source\system_TM4C123.c
+      Source file:   Device\Source\ARM\startup_TM4C123.s
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
